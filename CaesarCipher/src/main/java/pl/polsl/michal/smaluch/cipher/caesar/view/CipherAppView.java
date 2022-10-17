@@ -16,11 +16,17 @@ public class CipherAppView {
         this.cipherAppController = cipherAppController;
         scanner = new Scanner(System.in).useDelimiter("\\n");
     }
-   
-    public void printIntro(boolean decryptEncryptFlag){
-        String intro = "Hello, please enter message to " + (decryptEncryptFlag? "decrypt" : "encrypt") + " using Caesar Cipher: ";
-        
-        printMessage(intro);
+    
+    public enum MissingValue{
+        MESSAGE, KEY, OPTION
+    }
+    
+    public void askUser(MissingValue missingValue){
+        switch(missingValue){
+            case MESSAGE -> printMessage("Please provide a message: ");
+            case KEY -> printMessage("Please provide a key: ");
+            case OPTION -> printMessage("Select if you want to decrypt or encrypt [d/e]:");
+        }
     }
     
     //TODO: change it so it displays only encrypted or decrypted message
@@ -34,6 +40,10 @@ public class CipherAppView {
         
     public void printMessage(String message){
         System.out.println(message);
+    }
+    
+    public void printMessage(Exception exception){
+        System.out.println(exception);
     }
     
     public void printEncryptionKey(){
@@ -56,6 +66,7 @@ public class CipherAppView {
                       -m specify message to encrypt/decrypt
                       -h displays help
                       
+                      Message can contain only English alphabet letters.
                       It's possible to run program without any flags
                       """;
         printMessage(help);

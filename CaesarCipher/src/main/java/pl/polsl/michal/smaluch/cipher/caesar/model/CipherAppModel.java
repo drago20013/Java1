@@ -29,9 +29,11 @@ public class CipherAppModel {
         helpFlag = false;
     }
     
-    private void setKey(int key){
+    public void setKey(int key){
         this.encryptionKey = key % 26;
         this.decryptionKey = 26 - (key % 26);
+        
+        keyFlag=true;
     }
     
     public boolean getMessageFlag(){
@@ -54,15 +56,21 @@ public class CipherAppModel {
         return helpFlag;
     }
     
-    //-k 3 -d -m "youssef is nice"
+    public void setEncryptFlag(){
+        encryptFlag = true;
+    }
+    
+    public void setDecryptFlag(){
+        decryptFlag = true;
+    }
+    
     public void parseArguments(String[] args) throws OptionException, NumberFormatException, InvalidMessageException {
         
         //Exeptions:
         //Wrong flags
         //Wrong characters in message
-        //Assumption: key cannot be negative
+        //Wrong key (assumption: key cannot be negative)
         
-        //Set boolean in all cases after first flag of a type appears
         for (int i = 0; i < args.length; i++) {
            
             if("-h".equals(args[i])){
@@ -72,7 +80,6 @@ public class CipherAppModel {
             }else if("-k".equals(args[i])){
                 //save the key
                 setKey(Integer.parseUnsignedInt(args[++i]));
-                    keyFlag = true;
 
             }else if("-d".equals(args[i])){
                 //Only decrypt message
@@ -89,22 +96,21 @@ public class CipherAppModel {
                     throw new OptionException("baaaka illegal flag used!\n");
             }else if("-m".equals(args[i])){
                     setMessage(args[++i]);
-                    messageFlag = true;
             }else{
                 //throw exception, catch it in controller then display help but continue running;
                 throw new OptionException("baaaka illegal flag used!\n");
             }
         }
     }
-    
-    // TODO: Repair this shit so it works with all Case.
+     
     public void shiftMessage(){
         StringBuilder processedMessageBuilder = new StringBuilder();
         for (char character : message.toCharArray()) {
             if (character != ' ') {
-                int originalAlphabetPosition = character - 'a';
+                char baseChar = Character.isUpperCase(character) ? 'A' : 'a';
+                int originalAlphabetPosition = character - baseChar;
                 int newAlphabetPosition = (originalAlphabetPosition + (encryptFlag ? encryptionKey : decryptionKey)) % 26;
-                char newCharacter = (char) ('a' + newAlphabetPosition);
+                char newCharacter = (char) (baseChar + newAlphabetPosition);
                 processedMessageBuilder.append(newCharacter);
             } else {
                 processedMessageBuilder.append(character);
@@ -114,7 +120,13 @@ public class CipherAppModel {
     }
     
     public void setMessage(String message) throws InvalidMessageException{
-        this.message = message; // TODO: Validate message
+        for (char character : message.toCharArray()) {
+            if (character != ' ' && (character < 'A' || (character > 'Z' && character < 'a') || character > 'z' )) {
+                throw new InvalidMessageException();
+            }
+        }
+        this.message = message;
+        messageFlag = true;
     }
     
     private void setProcessedMessage(String processedMessage){

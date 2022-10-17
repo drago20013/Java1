@@ -1,4 +1,6 @@
-C:\Users\Michal\OneDrive\Dokumenty\NetBeansProjects\CaesarCipher\src\main\java\pl\polsl\michal\smaluch\cipher\caesar\controller\CipherAppController.java
-C:\Users\Michal\OneDrive\Dokumenty\NetBeansProjects\CaesarCipher\src\main\java\pl\polsl\michal\smaluch\cipher\caesar\view\CipherAppView.java
-C:\Users\Michal\OneDrive\Dokumenty\NetBeansProjects\CaesarCipher\src\main\java\pl\polsl\michal\smaluch\cipher\caesar\controller\CipherAppRunner.java
-C:\Users\Michal\OneDrive\Dokumenty\NetBeansProjects\CaesarCipher\src\main\java\pl\polsl\michal\smaluch\cipher\caesar\model\CipherAppModel.java
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\src\main\java\pl\polsl\michal\smaluch\cipher\caesar\model\InvalidMessageException.java
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\src\main\java\pl\polsl\michal\smaluch\cipher\caesar\controller\CipherAppController.java
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\src\main\java\pl\polsl\michal\smaluch\cipher\caesar\view\CipherAppView.java
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\src\main\java\pl\polsl\michal\smaluch\cipher\caesar\model\CipherAppModel.java
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\src\main\java\pl\polsl\michal\smaluch\cipher\caesar\controller\CipherAppRunner.java
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\src\main\java\pl\polsl\michal\smaluch\cipher\caesar\model\OptionException.java

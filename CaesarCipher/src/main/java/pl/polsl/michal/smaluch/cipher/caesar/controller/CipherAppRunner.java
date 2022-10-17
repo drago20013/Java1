@@ -14,13 +14,12 @@ public class CipherAppRunner {
         if(cipherAppController.getHelpFlag()){
             cipherAppController.printHelp();
             return;
-        }
-                
-        //UserInput
-        //TODO: change it so it only asks for things which weren't provided
-        cipherAppController.printIntro();
-        cipherAppController.getUserInput();
+        }          
+   
+        //User input
+        cipherAppController.askUser();
         
+        //applying cipher and displaying results 
         cipherAppController.shiftMessage();
         cipherAppController.printOutput();
     }

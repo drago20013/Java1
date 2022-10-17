@@ -21,8 +21,9 @@ public class CipherAppController {
         try{
             cipherAppModel.parseArguments(args);
         }catch(OptionException | NumberFormatException | InvalidMessageException e){
-            cipherAppView.printMessage(e.toString());
             cipherAppView.printHelp();
+            cipherAppView.printMessage("Something was wrong with your arguments input, program will ask you for missing ones if there are any.");
+            cipherAppView.printMessage(e);
         }
     }
     
@@ -34,10 +35,38 @@ public class CipherAppController {
         return cipherAppModel.getHelpFlag();
     }
     
-    public void printIntro(){
-        //if(cipherAppModel.getDecryptFlag()
-        //check if we want to decrypt or encrypt
-        cipherAppView.printIntro(true);
+    public void askUser(){
+        while (!cipherAppModel.getDecryptFlag() && !cipherAppModel.getEncryptFlag()){
+            cipherAppView.askUser(CipherAppView.MissingValue.OPTION);
+            String choice = cipherAppView.getInput();
+            if("d".equals(choice)){
+                cipherAppModel.setDecryptFlag();
+            }else if("e".equals(choice)){
+                cipherAppModel.setEncryptFlag();
+            }
+        }
+        
+        while (!cipherAppModel.getMessageFlag()){
+            cipherAppView.askUser(CipherAppView.MissingValue.MESSAGE);
+            String message = cipherAppView.getInput();
+            try{
+                cipherAppModel.setMessage(message);
+            }catch(InvalidMessageException e){
+                cipherAppView.printMessage("Something was wrong with your message, try again.");
+                cipherAppView.printMessage(e);
+            }
+        }
+        
+        while (!cipherAppModel.getKeyFlag()){
+            cipherAppView.askUser(CipherAppView.MissingValue.KEY);
+            try {
+                cipherAppModel.setKey(Integer.parseUnsignedInt(cipherAppView.getInput()));
+            }
+            catch (NumberFormatException e) {
+                cipherAppView.printMessage("Something was wrong with your key, try again");
+                cipherAppView.printMessage(e);
+            }
+        }
     }
 
     public void shiftMessage(){
@@ -46,14 +75,6 @@ public class CipherAppController {
     
     public void printOutput(){
         cipherAppView.printOutput(cipherAppModel.getMessage(),cipherAppModel.getProcessedMessage(), true);
-    }
-    
-    public void getUserInput(){
-        try{
-            cipherAppModel.setMessage(cipherAppView.getInput());
-        }catch (InvalidMessageException e){
-            cipherAppView.printMessage(e.toString());
-        }
     }
     
     public void printEncryptionKey(){

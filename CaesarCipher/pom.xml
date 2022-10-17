@@ -5,6 +5,25 @@
     <artifactId>CaesarCipher</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
+    <build>
+        <plugins>
+            <plugin>
+              <!-- Build an executable JAR -->
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-jar-plugin</artifactId>
+              <version>3.3.0</version>
+              <configuration>
+                <archive>
+                  <manifest>
+                    <addClasspath>true</addClasspath>
+                    <classpathPrefix>lib/</classpathPrefix>
+                    <mainClass>pl.polsl.michal.smaluch.cipher.caesar.controller.CipherAppRunner</mainClass>
+                  </manifest>
+                </archive>
+              </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <reporting>
         <plugins>
             <plugin>
