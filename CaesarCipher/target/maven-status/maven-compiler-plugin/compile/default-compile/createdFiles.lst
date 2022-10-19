@@ -1,8 +1,8 @@
 pl\polsl\michal\smaluch\cipher\caesar\view\CipherAppView.class
 pl\polsl\michal\smaluch\cipher\caesar\model\CipherAppModel.class
-pl\polsl\michal\smaluch\cipher\caesar\model\OptionException.class
 pl\polsl\michal\smaluch\cipher\caesar\controller\CipherAppController.class
 pl\polsl\michal\smaluch\cipher\caesar\view\CipherAppView$MissingValue.class
 pl\polsl\michal\smaluch\cipher\caesar\model\InvalidMessageException.class
 pl\polsl\michal\smaluch\cipher\caesar\controller\CipherAppRunner.class
+pl\polsl\michal\smaluch\cipher\caesar\model\InvalidOptionException.class
 pl\polsl\michal\smaluch\cipher\caesar\view\CipherAppView$1.class

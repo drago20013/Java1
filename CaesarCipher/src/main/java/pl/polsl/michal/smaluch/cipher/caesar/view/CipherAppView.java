@@ -4,57 +4,100 @@ import java.util.Scanner;
 import pl.polsl.michal.smaluch.cipher.caesar.controller.CipherAppController;
 
 /**
+ * A class that handles the UI in the console.
  *
  * @author Michal Smaluch
+ * @version 1.0
  */
 public class CipherAppView {
+
     private final CipherAppController cipherAppController;
-    
+
     private final Scanner scanner;
-    
-    public CipherAppView(CipherAppController cipherAppController){
+
+    /**
+     * Single argument constructor, creates scanner and assign reference to
+     * {@link CipherAppController}.
+     *
+     * @param cipherAppController reference to {@link CipherAppController}.
+     */
+    public CipherAppView(CipherAppController cipherAppController) {
         this.cipherAppController = cipherAppController;
         scanner = new Scanner(System.in).useDelimiter("\\n");
     }
-    
-    public enum MissingValue{
-        MESSAGE, KEY, OPTION
+
+    /**
+     * Possible missing values
+     */
+    public enum MissingValue {
+        /**
+         * Message is missing
+         */
+        MESSAGE,
+        /**
+         * Key is missing
+         */
+        KEY,
+        /**
+         * Option is missing or wrong
+         */
+        OPTION
     }
-    
-    public void askUser(MissingValue missingValue){
-        switch(missingValue){
-            case MESSAGE -> printMessage("Please provide a message: ");
-            case KEY -> printMessage("Please provide a key: ");
-            case OPTION -> printMessage("Select if you want to decrypt or encrypt [d/e]:");
+
+    /**
+     * Prints to user questions based on missing value.
+     *
+     * @param missingValue missing value.
+     */
+    public void askUser(MissingValue missingValue) {
+        switch (missingValue) {
+            case MESSAGE ->
+                printMessage("Please provide a message: ");
+            case KEY ->
+                printMessage("Please provide a key: ");
+            case OPTION ->
+                printMessage("Select if you want to decrypt or encrypt [d/e]:");
         }
     }
-    
-    //TODO: change it so it displays only encrypted or decrypted message
-    public void printOutput(String originalMessage, String processedMessage, boolean decryptEncryptFlag){
+
+    /**
+     * Prints formatted output.
+     *
+     * @param originalMessage original saved massage.
+     * @param processedMessage processed message either encrypted or decrypted.
+     * @param decryptEncryptFlag true if were decrypting, false if were
+     * encrypting.
+     */
+    public void printOutput(String originalMessage, String processedMessage, boolean decryptEncryptFlag) {
         printMessage("Here is your result:");
         printMessage("Original: ");
         printMessage(originalMessage);
-        printMessage((decryptEncryptFlag ? "Decrypted: " :  "Encrypted: "));
+        printMessage((decryptEncryptFlag ? "Decrypted: " : "Encrypted: "));
         printMessage(processedMessage);
     }
-        
-    public void printMessage(String message){
+
+    /**
+     * Prints line to the console.
+     *
+     * @param message message to be printed.
+     */
+    public void printMessage(String message) {
         System.out.println(message);
     }
-    
-    public void printMessage(Exception exception){
+
+    /**
+     * Prints exception to the console.
+     *
+     * @param exception exception to be printed.
+     */
+    public void printMessage(Exception exception) {
         System.out.println(exception);
     }
-    
-    public void printEncryptionKey(){
-        printMessage("Encryption key : " + Integer.toString(cipherAppController.getEncryptionKey()));
-    }
-    
-    public void printDecryptionKey(){
-        printMessage("Decryption key: " + Integer.toString(cipherAppController.getDecryptionKey()));
-    }
-    
-    public void printHelp(){
+
+    /**
+     * Prints help message to the console.
+     */
+    public void printHelp() {
         String help = """
                       Usage:
                       CaesarCipher [-d | -e] [-k <key>] [-m <message>]
@@ -71,8 +114,13 @@ public class CipherAppView {
                       """;
         printMessage(help);
     }
-    
-    public String getInput(){
+
+    /**
+     * Gets one line of user input.
+     *
+     * @return one line of user input.
+     */
+    public String getInput() {
         return scanner.next();
     }
 }
