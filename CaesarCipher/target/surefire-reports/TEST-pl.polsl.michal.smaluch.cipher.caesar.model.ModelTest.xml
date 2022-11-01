@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0.116" tests="19" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.vm.version" value="17.0.4.1+1-LTS-2"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17.0.4.1\bin"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\SuperStudent.PL\Desktop\exercise.2\CaesarCipher"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="PL"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="test" value="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\SuperStudent.PL\Desktop\exercise.2\CaesarCipher"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="17.0.4.1+1-LTS-2"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\SUPERS~1.PL\AppData\Local\Temp\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-15\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="classworlds.conf" value="C:\Program Files\NetBeans-15\netbeans\java\maven\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1250"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-17.0.4.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Microsoft MPI\Bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;C;C:\Program Files\PuTTY\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\dotnet\;C:\Users\SuperStudent.PL\AppData\Local\Microsoft\WindowsApps;;."/>
+    <property name="maven.conf" value="C:\Program Files\NetBeans-15\netbeans\java\maven/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="61.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="library.jansi.path" value="C:\Program Files\NetBeans-15\netbeans\java\maven\lib\jansi-native"/>
+    <property name="user.home" value="C:\Users\SuperStudent.PL"/>
+    <property name="user.timezone" value="Europe/Warsaw"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="17"/>
+    <property name="user.name" value="SuperStudent.PL"/>
+    <property name="java.class.path" value="C:\Program Files\NetBeans-15\netbeans\java\maven\boot\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest -Dmaven.ext.class.path=C:\Program Files\NetBeans-15\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-17.0.4.1"/>
+    <property name="user.language" value="pl"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="17.0.4.1"/>
+    <property name="native.encoding" value="Cp1250"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Program Files\NetBeans-15\netbeans\java\maven"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.version.date" value="2022-08-18"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase name="setKeyTest{int}[1]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0.022"/>
+  <testcase name="setKeyTest{int}[2]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0"/>
+  <testcase name="setKeyTest{int}[3]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0.016"/>
+  <testcase name="getHelpFlagTest" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0"/>
+  <testcase name="getDecryptFlagTest" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0"/>
+  <testcase name="getMessageTest" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0"/>
+  <testcase name="parseArgumentsTest{String, String, String}[1]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0"/>
+  <testcase name="parseArgumentsTest{String, String, String}[2]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0"/>
+  <testcase name="parseArgumentsTest{String, String, String}[3]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0"/>
+  <testcase name="setDecryptFlagTest" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0"/>
+  <testcase name="getEncryptFlagTest" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0"/>
+  <testcase name="getKeyFlagTest" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0"/>
+  <testcase name="setEncryptFlagTest" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0"/>
+  <testcase name="getProcessedMessageTest" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0"/>
+  <testcase name="shiftMessageTest" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0"/>
+  <testcase name="setMessageTest{String}[1]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0"/>
+  <testcase name="setMessageTest{String}[2]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0"/>
+  <testcase name="setMessageTest{String}[3]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0"/>
+  <testcase name="getMessageFlagTest" classname="pl.polsl.michal.smaluch.cipher.caesar.model.ModelTest" time="0"/>
+</testsuite>
