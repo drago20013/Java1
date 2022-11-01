@@ -1,5 +1,6 @@
 package pl.polsl.michal.smaluch.cipher.caesar.model;
 
+import java.util.List;
 import pl.polsl.michal.smaluch.cipher.caesar.controller.CipherAppController;
 
 /**
@@ -125,23 +126,23 @@ public class CipherAppModel {
      * @throws InvalidMessageException when message contains illegal characters
      * (not English alphabet letters).
      */
-    public void parseArguments(String[] args) throws InvalidOptionException, NumberFormatException, InvalidMessageException {
+    public void parseArguments(List<String> args) throws InvalidOptionException, NumberFormatException, InvalidMessageException {
 
         //Exeptions:
         //Wrong flags
         //Wrong characters in message
         //Wrong key (assumption: key cannot be negative)
-        for (int i = 0; i < args.length; i++) {
+        for (int i = 0; i < args.size(); i++) {
 
-            if ("-h".equals(args[i])) {
+            if ("-h".equals(args.get(i))) {
                 helpFlag = true;
                 break;
 
-            } else if ("-k".equals(args[i])) {
+            } else if ("-k".equals(args.get(i))) {
                 //save the key
-                setKey(Integer.parseUnsignedInt(args[++i]));
+                setKey(Integer.parseUnsignedInt(args.get(++i)));
 
-            } else if ("-d".equals(args[i])) {
+            } else if ("-d".equals(args.get(i))) {
                 //Only decrypt message
                 if (!decryptFlag && !encryptFlag) {
                     decryptFlag = true;
@@ -149,15 +150,15 @@ public class CipherAppModel {
                     throw new InvalidOptionException("You already chose decryption/encryption!\n");
                 }
 
-            } else if ("-e".equals(args[i])) {
+            } else if ("-e".equals(args.get(i))) {
                 //Only encrypt message
                 if (!decryptFlag && !encryptFlag) {
                     encryptFlag = true;
                 } else {
                     throw new InvalidOptionException("You already chose decryption/encryption!\n");
                 }
-            } else if ("-m".equals(args[i])) {
-                setMessage(args[++i]);
+            } else if ("-m".equals(args.get(i))) {
+                setMessage(args.get(++i));
             } else {
                 throw new InvalidOptionException("There is no such flag.\n");
             }

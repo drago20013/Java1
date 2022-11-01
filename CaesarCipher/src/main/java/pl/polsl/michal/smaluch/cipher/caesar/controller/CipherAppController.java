@@ -1,5 +1,6 @@
 package pl.polsl.michal.smaluch.cipher.caesar.controller;
 
+import java.util.List;
 import pl.polsl.michal.smaluch.cipher.caesar.model.CipherAppModel;
 import pl.polsl.michal.smaluch.cipher.caesar.model.InvalidMessageException;
 import pl.polsl.michal.smaluch.cipher.caesar.model.InvalidOptionException;
@@ -32,10 +33,11 @@ public class CipherAppController {
      *
      * @param args arguments list to be passed to model for parsing.
      */
-    public void start(String[] args) {
+    public void start(List<String> args) {
         cipherAppView = new CipherAppView(this);
         cipherAppModel = new CipherAppModel(this);
-
+        
+        
         try {
             cipherAppModel.parseArguments(args);
         }

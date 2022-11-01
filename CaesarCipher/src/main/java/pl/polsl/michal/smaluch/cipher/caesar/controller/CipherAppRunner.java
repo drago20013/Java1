@@ -1,5 +1,8 @@
 package pl.polsl.michal.smaluch.cipher.caesar.controller;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Runner class, contains {@code main} function and initializes
  * {@link pl.polsl.michal.smaluch.cipher.caesar.controller.CipherAppController}
@@ -27,7 +30,8 @@ public class CipherAppRunner {
         CipherAppController cipherAppController = new CipherAppController();
 
         //Initialization
-        cipherAppController.start(args);
+        List<String> argsList = Arrays.asList(args);
+        cipherAppController.start(argsList);
         if (cipherAppController.getHelpFlag()) {
             cipherAppController.printHelp();
             return;
