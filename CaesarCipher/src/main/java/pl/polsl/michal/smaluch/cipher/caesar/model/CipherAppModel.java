@@ -1,6 +1,7 @@
 package pl.polsl.michal.smaluch.cipher.caesar.model;
 
 import java.util.List;
+import java.util.stream.Stream;
 import pl.polsl.michal.smaluch.cipher.caesar.controller.CipherAppController;
 
 /**
@@ -45,9 +46,9 @@ public class CipherAppModel {
      *
      * @param key not processed key.
      */
-    public void setKey(int key) {
-        this.encryptionKey = key % 26;
-        this.decryptionKey = 26 - (key % 26);
+    public void setKey(String key) throws NumberFormatException{
+        this.encryptionKey = Integer.parseUnsignedInt(key) % 26;
+        this.decryptionKey = 26 - encryptionKey;
 
         keyFlag = true;
     }
@@ -80,6 +81,24 @@ public class CipherAppModel {
      */
     public boolean getEncryptFlag() {
         return encryptFlag;
+    }
+    
+    /**
+     * Returns encryption key.
+     *
+     * @return encryption key
+     */
+    public int getEncryptKey() {
+        return encryptionKey;
+    }
+    
+    /**
+     * Returns decryption key.
+     *
+     * @return decryption key.
+     */
+    public int getDecryptKey() {
+        return decryptionKey;
     }
 
     /**
@@ -114,7 +133,7 @@ public class CipherAppModel {
     public void setDecryptFlag() {
         decryptFlag = true;
     }
-
+    
     /**
      * Method responsible for parsing console arguments.
      *
@@ -126,7 +145,7 @@ public class CipherAppModel {
      * @throws InvalidMessageException when message contains illegal characters
      * (not English alphabet letters).
      */
-    public void parseArguments(List<String> args) throws InvalidOptionException, NumberFormatException, InvalidMessageException {
+    public void parseArguments(List<String> args) throws InvalidOptionException, InvalidMessageException {
 
         //Exeptions:
         //Wrong flags
@@ -140,13 +159,13 @@ public class CipherAppModel {
 
             } else if ("-k".equals(args.get(i))) {
                 //save the key
-                setKey(Integer.parseUnsignedInt(args.get(++i)));
+                setKey(args.get(++i));
 
             } else if ("-d".equals(args.get(i))) {
                 //Only decrypt message
                 if (!decryptFlag && !encryptFlag) {
                     decryptFlag = true;
-                } else {
+                 } else {
                     throw new InvalidOptionException("You already chose decryption/encryption!\n");
                 }
 
@@ -167,11 +186,14 @@ public class CipherAppModel {
 
     /**
      * Method responsible for shifting each character "key" times.
+     * Uses Stream of Characters.
      */
     public void shiftMessage() {
         StringBuilder processedMessageBuilder = new StringBuilder();
-        for (char character : message.toCharArray()) {
-            if (character != ' ') {
+        
+        Stream<Character> charStream = message.chars().mapToObj(c -> (char) c);
+        charStream.forEach(character -> {
+           if (character != ' ') {
                 char baseChar = Character.isUpperCase(character) ? 'A' : 'a';
                 int originalAlphabetPosition = character - baseChar;
                 int newAlphabetPosition = (originalAlphabetPosition + (encryptFlag ? encryptionKey : decryptionKey)) % 26;
@@ -180,7 +202,7 @@ public class CipherAppModel {
             } else {
                 processedMessageBuilder.append(character);
             }
-        }
+        });
         setProcessedMessage(processedMessageBuilder.toString());
     }
 
@@ -195,6 +217,7 @@ public class CipherAppModel {
         if (message.length() == 0) {
             throw new InvalidMessageException();
         }
+        
         for (char character : message.toCharArray()) {
             if (character != ' ' && (character < 'A' || (character > 'Z' && character < 'a') || character > 'z')) {
                 throw new InvalidMessageException();

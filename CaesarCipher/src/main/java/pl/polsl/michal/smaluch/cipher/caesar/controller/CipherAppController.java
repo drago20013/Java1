@@ -94,7 +94,7 @@ public class CipherAppController {
         while (!cipherAppModel.getKeyFlag()) {
             cipherAppView.askUser(CipherAppView.MissingValue.KEY);
             try {
-                cipherAppModel.setKey(Integer.parseUnsignedInt(cipherAppView.getInput()));
+                cipherAppModel.setKey(cipherAppView.getInput());
             }
             catch (NumberFormatException e) {
                 cipherAppView.printMessage("Something was wrong with your key, try again");
