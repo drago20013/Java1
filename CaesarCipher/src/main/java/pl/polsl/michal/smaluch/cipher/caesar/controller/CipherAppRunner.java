@@ -2,6 +2,8 @@ package pl.polsl.michal.smaluch.cipher.caesar.controller;
 
 import java.util.Arrays;
 import java.util.List;
+import javax.swing.JFrame;
+import pl.polsl.michal.smaluch.cipher.caesar.view.CipherAppGraphicalView;
 
 /**
  * Runner class, contains {@code main} function and initializes
@@ -28,6 +30,13 @@ public class CipherAppRunner {
      */
     public static void main(String[] args) {
         CipherAppController cipherAppController = new CipherAppController();
+        
+        //Prototype
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                createAndShowGUI(cipherAppController);
+            }
+        });
 
         //Initialization
         List<String> argsList = Arrays.asList(args);
@@ -43,5 +52,22 @@ public class CipherAppRunner {
         //applying cipher and displaying results 
         cipherAppController.shiftMessage();
         cipherAppController.printOutput();
+    }
+    
+    private static void createAndShowGUI(CipherAppController cipherAppController) {        
+        JFrame.setDefaultLookAndFeelDecorated(true);
+
+        JFrame frame = new JFrame("Caesar Cipher App");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(640, 320);
+
+        CipherAppGraphicalView guiView = new CipherAppGraphicalView(cipherAppController);
+        //panel widoczny
+        guiView.setOpaque(true); 
+        frame.setContentPane(guiView);
+
+        //wyswietlenie okna
+        frame.pack();
+        frame.setVisible(true);
     }
 }
