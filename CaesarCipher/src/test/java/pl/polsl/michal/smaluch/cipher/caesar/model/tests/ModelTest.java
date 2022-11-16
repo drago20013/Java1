@@ -7,7 +7,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
-import pl.polsl.michal.smaluch.cipher.caesar.controller.CipherAppController;
 import pl.polsl.michal.smaluch.cipher.caesar.model.CipherAppModel;
 import pl.polsl.michal.smaluch.cipher.caesar.model.InvalidMessageException;
 import pl.polsl.michal.smaluch.cipher.caesar.model.InvalidOptionException;
@@ -17,12 +16,10 @@ import pl.polsl.michal.smaluch.cipher.caesar.model.InvalidOptionException;
  */
 public class ModelTest {
     CipherAppModel cipherAppModel;
-    CipherAppController cipherAppController;
     
     @BeforeEach
     public void setUp() {
-        cipherAppController = new CipherAppController();
-        cipherAppModel = new CipherAppModel(cipherAppController);
+        cipherAppModel = new CipherAppModel();
     }
     
     @ParameterizedTest

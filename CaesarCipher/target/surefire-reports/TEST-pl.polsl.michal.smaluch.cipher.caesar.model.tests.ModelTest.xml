@@ -1,84 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.076" tests="23" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.196" tests="23" errors="0" skipped="0" failures="0">
   <properties>
-    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="java.vm.version" value="19.0.1+10"/>
-    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-19-openjdk/lib"/>
-    <property name="maven.multiModuleProjectDirectory" value="/home/drago/Java1/CaesarCipher"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.vm.version" value="19+36-2238"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-19\bin"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="java.vendor.url" value="https://openjdk.java.net/"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
-    <property name="path.separator" value=":"/>
-    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="user.script" value=""/>
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="test" value="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/drago/Java1/CaesarCipher"/>
-    <property name="java.vm.compressedOopsMode" value="32-bit"/>
-    <property name="java.runtime.version" value="19.0.1+10"/>
+    <property name="user.dir" value="C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="19+36-2238"/>
     <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.io.tmpdir" value="C:\Users\Michal\AppData\Local\Temp\"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="stderr.encoding" value="UTF-8"/>
-    <property name="os.name" value="Linux"/>
-    <property name="maven.ext.class.path" value="/usr/lib/netbeans/java/maven-nblib/netbeans-eventspy.jar"/>
-    <property name="classworlds.conf" value="/usr/lib/netbeans/java/maven/bin/m2.conf"/>
-    <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="stdout.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
-    <property name="maven.conf" value="/usr/lib/netbeans/java/maven/conf"/>
+    <property name="user.variant" value=""/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-15\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="classworlds.conf" value="C:\Program Files\NetBeans-15\netbeans\java\maven\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-19\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\CMake\bin;C:\Program Files\nodejs\;C:\Program Files\PuTTY\;C:\Users\Michal\AppData\Local\Microsoft\WindowsApps;C:\Users\Michal\spicetify-cli;C:\Users\Michal\.dotnet\tools;C:\Users\Michal\AppData\Roaming\npm;."/>
+    <property name="maven.conf" value="C:\Program Files\NetBeans-15\netbeans\java\maven/conf"/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="63.0"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="6.0.2-arch1-1"/>
-    <property name="library.jansi.path" value="/usr/lib/netbeans/java/maven/lib/jansi-native"/>
-    <property name="user.home" value="/home/drago"/>
+    <property name="os.version" value="10.0"/>
+    <property name="library.jansi.path" value="C:\Program Files\NetBeans-15\netbeans\java\maven\lib\jansi-native"/>
+    <property name="user.home" value="C:\Users\Michal"/>
     <property name="user.timezone" value="Europe/Warsaw"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="19"/>
-    <property name="user.name" value="drago"/>
-    <property name="java.class.path" value="/usr/lib/netbeans/java/maven/boot/plexus-classworlds-2.6.0.jar"/>
+    <property name="user.name" value="Michal"/>
+    <property name="java.class.path" value="C:\Program Files\NetBeans-15\netbeans\java\maven\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="19"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest -Dmaven.ext.class.path=/usr/lib/netbeans/java/maven-nblib/netbeans-eventspy.jar surefire:test"/>
-    <property name="java.home" value="/usr/lib/jvm/java-19-openjdk"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans-15\netbeans\java\maven-nblib\netbeans-eventspy.jar install"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-19"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="19.0.1"/>
-    <property name="native.encoding" value="UTF-8"/>
-    <property name="java.vendor" value="N/A"/>
-    <property name="maven.home" value="/usr/lib/netbeans/java/maven"/>
-    <property name="file.separator" value="/"/>
-    <property name="java.version.date" value="2022-10-18"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="19"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Program Files\NetBeans-15\netbeans\java\maven"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.version.date" value="2022-09-20"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="shiftMessageTestDecrypt" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.016"/>
-  <testcase name="setKeyTestWithCorrectValues{String}[1]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.016"/>
+  <testcase name="shiftMessageTestDecrypt" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.063"/>
+  <testcase name="setKeyTestWithCorrectValues{String}[1]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.025"/>
   <testcase name="setKeyTestWithCorrectValues{String}[2]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0"/>
-  <testcase name="parseArgumentsTestEncryptFlag" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.001"/>
+  <testcase name="parseArgumentsTestEncryptFlag" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0"/>
   <testcase name="setKeyTestWithIncorrectValues{String}[1]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.001"/>
-  <testcase name="setKeyTestWithIncorrectValues{String}[2]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.001"/>
+  <testcase name="setKeyTestWithIncorrectValues{String}[2]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.002"/>
   <testcase name="parseArgumentsTestMessage" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.001"/>
   <testcase name="shiftMessageTestEncrypt" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0"/>
   <testcase name="parseArgumentsTestWithIncorrectValues{String}[1]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.001"/>
-  <testcase name="parseArgumentsTestWithIncorrectValues{String}[2]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0"/>
+  <testcase name="parseArgumentsTestWithIncorrectValues{String}[2]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.001"/>
   <testcase name="parseArgumentsTestWithIncorrectValues{String}[3]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0"/>
-  <testcase name="parseArgumentsTestWithIncorrectValues{String}[4]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0"/>
+  <testcase name="parseArgumentsTestWithIncorrectValues{String}[4]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.001"/>
   <testcase name="parseArgumentsTestWithIncorrectValues{String}[5]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0"/>
-  <testcase name="parseArgumentsTestWithIncorrectValues{String}[6]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0"/>
-  <testcase name="setMessageTestCorrect" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.001"/>
+  <testcase name="parseArgumentsTestWithIncorrectValues{String}[6]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.001"/>
+  <testcase name="setMessageTestCorrect" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0"/>
   <testcase name="parseArgumentsTestWithCorrectValues{String}[1]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0"/>
   <testcase name="parseArgumentsTestWithCorrectValues{String}[2]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0"/>
   <testcase name="parseArgumentsTestWithCorrectValues{String}[3]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.001"/>
-  <testcase name="parseArgumentsTestWithCorrectValues{String}[4]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.001"/>
+  <testcase name="parseArgumentsTestWithCorrectValues{String}[4]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0"/>
   <testcase name="parseArgumentsTestWithCorrectValues{String}[5]" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0"/>
-  <testcase name="parseArgumentsTestKey" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0"/>
-  <testcase name="setMessageTestIncorrect" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.001"/>
-  <testcase name="parseArgumentsTestDecryptFlag" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0"/>
+  <testcase name="parseArgumentsTestKey" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.001"/>
+  <testcase name="setMessageTestIncorrect" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0"/>
+  <testcase name="parseArgumentsTestDecryptFlag" classname="pl.polsl.michal.smaluch.cipher.caesar.model.tests.ModelTest" time="0.002"/>
 </testsuite>

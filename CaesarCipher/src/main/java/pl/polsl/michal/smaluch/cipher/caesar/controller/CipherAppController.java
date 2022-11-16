@@ -34,8 +34,8 @@ public class CipherAppController {
      * @param args arguments list to be passed to model for parsing.
      */
     public void start(List<String> args) {
-        cipherAppView = new CipherAppView(this);
-        cipherAppModel = new CipherAppModel(this);
+        cipherAppView = new CipherAppView();
+        cipherAppModel = new CipherAppModel();
         
         
         try {

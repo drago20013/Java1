@@ -2,7 +2,6 @@ package pl.polsl.michal.smaluch.cipher.caesar.model;
 
 import java.util.List;
 import java.util.stream.Stream;
-import pl.polsl.michal.smaluch.cipher.caesar.controller.CipherAppController;
 
 /**
  * Model handles the data processing and storing and has all the methods used to
@@ -12,8 +11,6 @@ import pl.polsl.michal.smaluch.cipher.caesar.controller.CipherAppController;
  * @version 1.0
  */
 public class CipherAppModel {
-
-    private final CipherAppController cipherAppController;
 
     private String message;
     private String processedMessage;
@@ -29,17 +26,18 @@ public class CipherAppModel {
     /**
      * Single argument constructor, sets default values for private fields.
      *
-     * @param cipherAppController reference to {@link CipherAppController}.
      */
-    public CipherAppModel(CipherAppController cipherAppController) {
-        this.cipherAppController = cipherAppController;
+    public CipherAppModel() {
+        message = "";
         messageFlag = false;
         decryptFlag = false;
         encryptFlag = false;
         keyFlag = false;
         helpFlag = false;
+        encryptionKey = 0;
+        decryptionKey = 26;
     }
-
+    
     /**
      * Sets encryption and decryption key, limits key to 0 - 25. Sets key flag
      * to true;
@@ -125,6 +123,7 @@ public class CipherAppModel {
      */
     public void setEncryptFlag() {
         encryptFlag = true;
+        decryptFlag = false;
     }
 
     /**
@@ -132,6 +131,7 @@ public class CipherAppModel {
      */
     public void setDecryptFlag() {
         decryptFlag = true;
+        encryptFlag = false;
     }
     
     /**
@@ -190,10 +190,10 @@ public class CipherAppModel {
      */
     public void shiftMessage() {
         StringBuilder processedMessageBuilder = new StringBuilder();
-        
+       
         Stream<Character> charStream = message.chars().mapToObj(c -> (char) c);
         charStream.forEach(character -> {
-           if (character != ' ') {
+           if (character != ' ' && character != '\n') {
                 char baseChar = Character.isUpperCase(character) ? 'A' : 'a';
                 int originalAlphabetPosition = character - baseChar;
                 int newAlphabetPosition = (originalAlphabetPosition + (encryptFlag ? encryptionKey : decryptionKey)) % 26;
@@ -204,6 +204,7 @@ public class CipherAppModel {
             }
         });
         setProcessedMessage(processedMessageBuilder.toString());
+        
     }
 
     /**
@@ -219,7 +220,7 @@ public class CipherAppModel {
         }
         
         for (char character : message.toCharArray()) {
-            if (character != ' ' && (character < 'A' || (character > 'Z' && character < 'a') || character > 'z')) {
+            if (character != ' ' && character != '\n' && (character < 'A' || (character > 'Z' && character < 'a') || character > 'z')) {
                 throw new InvalidMessageException();
             }
         }

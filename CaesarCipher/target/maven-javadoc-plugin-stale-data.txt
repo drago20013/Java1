@@ -27,33 +27,35 @@ pl.polsl.michal.smaluch.cipher.caesar.controller
 pl.polsl.michal.smaluch.cipher.caesar.model
 pl.polsl.michal.smaluch.cipher.caesar.view
 'C:/Users/Michal/Dokumenty/NetBeansProjects/Java1/CaesarCipher/src/main/java/pl/polsl/michal/smaluch/cipher/caesar/controller/CipherAppController.java'
+'C:/Users/Michal/Dokumenty/NetBeansProjects/Java1/CaesarCipher/src/main/java/pl/polsl/michal/smaluch/cipher/caesar/controller/CipherAppControllerGUI.java'
 'C:/Users/Michal/Dokumenty/NetBeansProjects/Java1/CaesarCipher/src/main/java/pl/polsl/michal/smaluch/cipher/caesar/controller/CipherAppRunner.java'
 'C:/Users/Michal/Dokumenty/NetBeansProjects/Java1/CaesarCipher/src/main/java/pl/polsl/michal/smaluch/cipher/caesar/controller/package-info.java'
 'C:/Users/Michal/Dokumenty/NetBeansProjects/Java1/CaesarCipher/src/main/java/pl/polsl/michal/smaluch/cipher/caesar/model/CipherAppModel.java'
 'C:/Users/Michal/Dokumenty/NetBeansProjects/Java1/CaesarCipher/src/main/java/pl/polsl/michal/smaluch/cipher/caesar/model/InvalidMessageException.java'
 'C:/Users/Michal/Dokumenty/NetBeansProjects/Java1/CaesarCipher/src/main/java/pl/polsl/michal/smaluch/cipher/caesar/model/InvalidOptionException.java'
 'C:/Users/Michal/Dokumenty/NetBeansProjects/Java1/CaesarCipher/src/main/java/pl/polsl/michal/smaluch/cipher/caesar/model/package-info.java'
+'C:/Users/Michal/Dokumenty/NetBeansProjects/Java1/CaesarCipher/src/main/java/pl/polsl/michal/smaluch/cipher/caesar/view/CipherAppGraphicalView.java'
 'C:/Users/Michal/Dokumenty/NetBeansProjects/Java1/CaesarCipher/src/main/java/pl/polsl/michal/smaluch/cipher/caesar/view/CipherAppView.java'
 'C:/Users/Michal/Dokumenty/NetBeansProjects/Java1/CaesarCipher/src/main/java/pl/polsl/michal/smaluch/cipher/caesar/view/package-info.java'
 C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\src\main\java = 1665079046625
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\allclasses-index.html = 1667404751990
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\allpackages-index.html = 1667404751994
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\copy.svg = 1667404752048
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\element-list = 1667404751787
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\help-doc.html = 1667404752041
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\index-all.html = 1667404752025
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\index.html = 1667404751973
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\jquery-ui.overrides.css = 1667404752088
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\member-search-index.js = 1667404752000
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\module-search-index.js = 1667404751995
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\overview-summary.html = 1667404752030
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\overview-tree.html = 1667404751957
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\package-search-index.js = 1667404751996
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\script.js = 1667404752046
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\search-page.js = 1667404752064
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\search.html = 1667404752027
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\search.js = 1667404752054
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\serialized-form.html = 1667404751885
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\stylesheet.css = 1667404752044
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\tag-search-index.js = 1667404752001
-C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\type-search-index.js = 1667404751998
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\allclasses-index.html = 1668637846766
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\allpackages-index.html = 1668637846770
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\copy.svg = 1668637846829
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\element-list = 1668637846548
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\help-doc.html = 1668637846813
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\index-all.html = 1668637846801
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\index.html = 1668637846741
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\jquery-ui.overrides.css = 1668637846849
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\member-search-index.js = 1668637846780
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\module-search-index.js = 1668637846771
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\overview-summary.html = 1668637846807
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\overview-tree.html = 1668637846733
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\package-search-index.js = 1668637846776
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\script.js = 1668637846828
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\search-page.js = 1668637846832
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\search.html = 1668637846803
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\search.js = 1668637846831
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\serialized-form.html = 1668637846621
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\stylesheet.css = 1668637846823
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\tag-search-index.js = 1668637846781
+C:\Users\Michal\Dokumenty\NetBeansProjects\Java1\CaesarCipher\target\site\apidocs\type-search-index.js = 1668637846778

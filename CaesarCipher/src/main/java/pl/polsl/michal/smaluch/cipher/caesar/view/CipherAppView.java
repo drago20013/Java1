@@ -11,18 +11,14 @@ import pl.polsl.michal.smaluch.cipher.caesar.controller.CipherAppController;
  */
 public class CipherAppView {
 
-    private final CipherAppController cipherAppController;
-
     private final Scanner scanner;
 
     /**
      * Single argument constructor, creates scanner and assign reference to
      * {@link CipherAppController}.
      *
-     * @param cipherAppController reference to {@link CipherAppController}.
      */
-    public CipherAppView(CipherAppController cipherAppController) {
-        this.cipherAppController = cipherAppController;
+    public CipherAppView() {
         scanner = new Scanner(System.in).useDelimiter("\\n");
     }
 
