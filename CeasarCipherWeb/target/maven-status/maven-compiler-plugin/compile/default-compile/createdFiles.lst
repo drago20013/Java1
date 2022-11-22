@@ -1,4 +1,7 @@
-pl/polsl/michal/smaluch/cipher/caesar/model/InvalidOptionException.class
-pl/polsl/michal/smaluch/cipher/caesar/model/InvalidMessageException.class
-pl/polsl/michal/smaluch/cipher/caesar/model/CipherAppModel.class
-pl/polsl/michal/smaluch/cipher/caesar/servlets/Convert.class
+pl\polsl\michal\smaluch\cipher\caesar\servlets\Tests.class
+pl\polsl\michal\smaluch\cipher\caesar\model\CipherAppModel.class
+pl\polsl\michal\smaluch\cipher\caesar\servlets\HistoryServlet.class
+pl\polsl\michal\smaluch\cipher\caesar\model\InvalidMessageException.class
+pl\polsl\michal\smaluch\cipher\caesar\servlets\StandaloneHistoryServlet.class
+pl\polsl\michal\smaluch\cipher\caesar\model\InvalidOptionException.class
+pl\polsl\michal\smaluch\cipher\caesar\servlets\ConvertServlet.class

@@ -7,8 +7,10 @@
         <h1>Caesar Cipher</h1>
 
         <form action="Convert" method="post">
-            <p><label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" cols="20"></textarea>
+            <p>
+                <label for="message">Message:</label>
+                <br>
+                <textarea id="message" name="message" rows="4" cols="20" required></textarea>
             </p>
             <p>
                 <label for="key">Key:</label>
@@ -42,13 +44,15 @@
                 </select>
             </p>
             <p>
-                  <input type="radio" id="encrypt" name="option" value="encrypt">
+                  <input type="radio" id="encrypt" name="option" value="encrypt" checked="checked">
                   <label for="encrypt">Encrypt</label><br>
                   <input type="radio" id="decrypt" name="option" value="decrypt">
                   <label for="decrypt">Decrypt</label><br>
             </p>
             <input type="submit" style="margin: auto" value="Convert">
         </form>
-
+        <form action="StandaloneHistory">
+            <input type="submit" value="See history" />
+        </form>
     </body>
 </html>

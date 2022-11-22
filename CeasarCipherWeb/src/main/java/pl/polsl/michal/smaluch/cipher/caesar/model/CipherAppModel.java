@@ -42,7 +42,8 @@ public class CipherAppModel {
      * Sets encryption and decryption key, limits key to 0 - 25. Sets key flag
      * to true;
      *
-     * @param key not processed key.
+     * @param key not processed key (uint).
+     * @throws NumberFormatException when cant parse uint.
      */
     public void setKey(String key) throws NumberFormatException{
         this.encryptionKey = Integer.parseUnsignedInt(key) % 26;
@@ -193,7 +194,7 @@ public class CipherAppModel {
        
         Stream<Character> charStream = message.chars().mapToObj(c -> (char) c);
         charStream.forEach(character -> {
-           if (character != ' ' && character != '\n') {
+           if (character != ' ' && character != '\r' && character != '\n') {
                 char baseChar = Character.isUpperCase(character) ? 'A' : 'a';
                 int originalAlphabetPosition = character - baseChar;
                 int newAlphabetPosition = (originalAlphabetPosition + (encryptFlag ? encryptionKey : decryptionKey)) % 26;
@@ -220,7 +221,7 @@ public class CipherAppModel {
         }
         
         for (char character : message.toCharArray()) {
-            if (character != ' ' && character != '\n' && (character < 'A' || (character > 'Z' && character < 'a') || character > 'z')) {
+            if (character != ' ' && character != '\r' && character != '\n' && (character < 'A' || (character > 'Z' && character < 'a') || character > 'z')) {
                 throw new InvalidMessageException();
             }
         }
