@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Standalone version for history display, without any processing of data or communication with model. Includes History Servlet.
  * @author Michal Smaluch
+ * @version 1.0
  */
 @WebServlet(name = "StandaloneHistory", urlPatterns = {"/StandaloneHistory"})
 public class StandaloneHistoryServlet extends HttpServlet {

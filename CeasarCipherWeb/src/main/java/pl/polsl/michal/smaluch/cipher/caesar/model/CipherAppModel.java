@@ -37,7 +37,7 @@ public class CipherAppModel {
         encryptionKey = 0;
         decryptionKey = 26;
     }
-    
+
     /**
      * Sets encryption and decryption key, limits key to 0 - 25. Sets key flag
      * to true;
@@ -45,7 +45,7 @@ public class CipherAppModel {
      * @param key not processed key (uint).
      * @throws NumberFormatException when cant parse uint.
      */
-    public void setKey(String key) throws NumberFormatException{
+    public void setKey(String key) throws NumberFormatException {
         this.encryptionKey = Integer.parseUnsignedInt(key) % 26;
         this.decryptionKey = 26 - encryptionKey;
 
@@ -81,7 +81,7 @@ public class CipherAppModel {
     public boolean getEncryptFlag() {
         return encryptFlag;
     }
-    
+
     /**
      * Returns encryption key.
      *
@@ -90,7 +90,7 @@ public class CipherAppModel {
     public int getEncryptKey() {
         return encryptionKey;
     }
-    
+
     /**
      * Returns decryption key.
      *
@@ -134,7 +134,7 @@ public class CipherAppModel {
         decryptFlag = true;
         encryptFlag = false;
     }
-    
+
     /**
      * Method responsible for parsing console arguments.
      *
@@ -166,7 +166,7 @@ public class CipherAppModel {
                 //Only decrypt message
                 if (!decryptFlag && !encryptFlag) {
                     decryptFlag = true;
-                 } else {
+                } else {
                     throw new InvalidOptionException("You already chose decryption/encryption!\n");
                 }
 
@@ -186,15 +186,15 @@ public class CipherAppModel {
     }
 
     /**
-     * Method responsible for shifting each character "key" times.
-     * Uses Stream of Characters.
+     * Method responsible for shifting each character "key" times. Uses Stream
+     * of Characters.
      */
     public void shiftMessage() {
         StringBuilder processedMessageBuilder = new StringBuilder();
-       
+
         Stream<Character> charStream = message.chars().mapToObj(c -> (char) c);
         charStream.forEach(character -> {
-           if (character != ' ' && character != '\r' && character != '\n') {
+            if (character != ' ' && character != '\r' && character != '\n') {
                 char baseChar = Character.isUpperCase(character) ? 'A' : 'a';
                 int originalAlphabetPosition = character - baseChar;
                 int newAlphabetPosition = (originalAlphabetPosition + (encryptFlag ? encryptionKey : decryptionKey)) % 26;
@@ -205,7 +205,7 @@ public class CipherAppModel {
             }
         });
         setProcessedMessage(processedMessageBuilder.toString());
-        
+
     }
 
     /**
@@ -216,10 +216,14 @@ public class CipherAppModel {
      * (not English alphabet letters).
      */
     public void setMessage(String message) throws InvalidMessageException {
-        if (message.length() == 0) {
+        try {
+            if (message.length() == 0) {
+                throw new InvalidMessageException();
+            }
+        } catch (NullPointerException e) {
             throw new InvalidMessageException();
         }
-        
+
         for (char character : message.toCharArray()) {
             if (character != ' ' && character != '\r' && character != '\n' && (character < 'A' || (character > 'Z' && character < 'a') || character > 'z')) {
                 throw new InvalidMessageException();

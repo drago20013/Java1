@@ -1,6 +1,8 @@
-pl\polsl\michal\smaluch\cipher\caesar\servlets\Tests.class
+pl\polsl\michal\smaluch\cipher\caesar\servlets\DatabaseHistoryServlet.class
 pl\polsl\michal\smaluch\cipher\caesar\model\CipherAppModel.class
 pl\polsl\michal\smaluch\cipher\caesar\servlets\HistoryServlet.class
+pl\polsl\michal\smaluch\cipher\caesar\servlets\JPAConnectionServletListener.class
+pl\polsl\michal\smaluch\cipher\caesar\model\HistoryEntity.class
 pl\polsl\michal\smaluch\cipher\caesar\model\InvalidMessageException.class
 pl\polsl\michal\smaluch\cipher\caesar\servlets\StandaloneHistoryServlet.class
 pl\polsl\michal\smaluch\cipher\caesar\model\InvalidOptionException.class

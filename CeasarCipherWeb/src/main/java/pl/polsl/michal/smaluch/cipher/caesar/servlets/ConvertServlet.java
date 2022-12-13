@@ -2,6 +2,11 @@ package pl.polsl.michal.smaluch.cipher.caesar.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -10,12 +15,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import pl.polsl.michal.smaluch.cipher.caesar.model.CipherAppModel;
+import pl.polsl.michal.smaluch.cipher.caesar.model.HistoryEntity;
 import pl.polsl.michal.smaluch.cipher.caesar.model.InvalidMessageException;
 
 /**
- * Main Servlet used as a Controller part of MVC pattern. Communicates with model, passes all parameters. Includes History Servlet for displaying history.
- * Uses cookies for keeping track of errors and sessions for history of operations.
+ * Main Servlet used as a Controller part of MVC pattern. Communicates with
+ * model, passes all parameters. Includes History Servlet for displaying
+ * history. Uses cookies for keeping track of errors and sessions for history of
+ * operations.
+ *
  * @author Michal Smaluch
+ * @version 1.0
  */
 @WebServlet(name = "Convert", urlPatterns = {"/Convert"})
 public class ConvertServlet extends HttpServlet {
@@ -72,18 +82,52 @@ public class ConvertServlet extends HttpServlet {
             session.setAttribute("count", count);
 
             try {
-                cipherAppModel.setMessage(message);
                 try {
+                    cipherAppModel.setMessage(message);
+
                     cipherAppModel.setKey(key);
-                    if (operation.equals("encrypt")) {
+                    try {
+                        if (operation.equals("encrypt")) {
+                            cipherAppModel.setEncryptFlag();
+                        } else {
+                            cipherAppModel.setDecryptFlag();
+                        }
+                    } catch (NullPointerException e) {
                         cipherAppModel.setEncryptFlag();
-                    } else {
-                        cipherAppModel.setDecryptFlag();
                     }
 
                     cipherAppModel.shiftMessage();
 
-                    String entry = (cipherAppModel.getEncryptFlag() ? "Encryption " : "Decryption ") + "-" + cipherAppModel.getMessage() + "-" + key + "-" + cipherAppModel.getProcessedMessage();
+                    //At this point we have working entry, save it to local history (session), and database
+                    EntityManagerFactory emf = (EntityManagerFactory) getServletContext().getAttribute("emf");
+
+                    String entryMsg = cipherAppModel.getMessage();
+                    String entryProcMsg = cipherAppModel.getProcessedMessage();
+                    String operationType = (cipherAppModel.getEncryptFlag() ? "Encryption " : "Decryption ");
+
+                    if (emf != null && emf.isOpen()) {
+                        EntityManager em = emf.createEntityManager();
+                        HistoryEntity dbEntity = new HistoryEntity();
+                        LocalDate todayLocalDate = LocalDate.now(ZoneId.of("Europe/Paris"));
+                        dbEntity.setDate(todayLocalDate);
+                        dbEntity.setMessage(entryMsg);
+                        dbEntity.setProcessedMessage(entryProcMsg);
+                        dbEntity.setShiftKey(Integer.parseInt(key));
+                        dbEntity.setOperationType(operationType);
+                        em.getTransaction().begin();
+                        try {
+                            em.persist(dbEntity);
+                            em.getTransaction().commit();
+                            System.out.println("Object persisted");
+                        } catch (PersistenceException e) {
+                            System.out.println("Rollback");
+                            em.getTransaction().rollback();
+                        } finally {
+                            em.close();
+                        }
+                    }
+
+                    String entry = operationType + "-" + entryMsg + "-" + key + "-" + entryProcMsg;
 
                     session.setAttribute(count.toString() + "entry", entry);
 
